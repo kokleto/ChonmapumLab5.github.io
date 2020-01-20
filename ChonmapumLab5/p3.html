@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>
+        <label>Enter student name:</label>
+        <input id="student_name" type="text">
+    </h2>
+
+    <h2>
+        <label>English</label>
+        <input id="English" type="radio" value="English" name="language">
+        <label>Thai</label>
+        <input id="Thai" type="radio" value="Thai" name="language">
+    </h2>
+
+    <div>
+        <button class="click">Generate random words</button>
+    </div>
+
+    <h2>
+        <p class=result></p>
+    </h2>
+
+    <script>
+        var th = ['คนรวย', 'คนใจดี', 'คนขยัน', 'คนขี้เกียจ'];
+        var en = [' is rich', ' is good looking', ' is diligent', ' a lazy'];
+        var result = document.querySelector('.result');
+        var submit = document.querySelector('.click');
+        submit.addEventListener('click', updateResult);
+
+        function updateResult() {
+            if (document.getElementById('Thai').checked) {
+                result.textContent = student_name.value + ' เป็น' + th[Math.floor(Math.random() * th.length)];
+            }
+            if (document.getElementById('English').checked) {
+                result.textContent = student_name.value + ' is ' + en[Math.floor(Math.random() * en.length)];
+            }
+            result.style.backgroundColor = 'yellow';
+            result.style.padding = '15px';
+        }
+    </script>
+
+</body>
+
+</html>

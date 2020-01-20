@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Apply JavaScript example</title>
+</head>
+
+<body>
+    <button id="Button">Click me</button>
+    <p id="text"></p>
+    <script>
+        let clickbutton = document.getElementById("Button")
+        let output = document.getElementById("text")
+        var count = 0;
+
+        clickbutton.onclick = function() {
+            if (count == 0) {
+                count++;
+                output.innerHTML =
+                    "You clicked the button for " + count + " time.";
+            } else {
+                count++;
+                output.innerHTML =
+                    "You clicked the button for " + count + " times.";
+            }
+        };
+    </script>
+
+</body>
+
+</html>
